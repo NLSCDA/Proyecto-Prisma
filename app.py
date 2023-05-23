@@ -26,7 +26,7 @@ server = app.server
 
 
 def serve_layout():
-    data=pd.read_csv("https://raw.githubusercontent.com/Nancy2405/dashboard-prisma/main/Ultima_Consulta.csv",sep=';',encoding='latin-1')
+    data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",sep=';',encoding='latin-1')
     data.drop(columns=["Unnamed: 0"],inplace=True)
     
             
