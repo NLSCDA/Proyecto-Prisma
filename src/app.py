@@ -18,7 +18,7 @@ import dash_auth
 
 VALID_USERNAME_PASSWORD_PAIRS = {
     
-    'antonio': 'murga'
+    'pollo': 'loco'
 }
 css = 'https://codepen.io/chriddyp/pen/bWLwgP.css'
 app = Dash(__name__, external_stylesheets=[css])
