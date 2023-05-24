@@ -12,15 +12,21 @@ import dash_bootstrap_components as dbc
 from dash import Dash, Input, Output, callback, dash_table
 import numpy as np
 import matplotlib.pyplot as plt
-
+import dash_auth
 
 # In[2]:
 
-
+VALID_USERNAME_PASSWORD_PAIRS = {
+    
+    'hello': 'world'
+}
 css = 'https://codepen.io/chriddyp/pen/bWLwgP.css'
 app = Dash(__name__, external_stylesheets=[css])
 server = app.server
-
+auth = dash_auth.BasicAuth(
+    app,
+    VALID_USERNAME_PASSWORD_PAIRS
+)
 
 # In[5]:
 
