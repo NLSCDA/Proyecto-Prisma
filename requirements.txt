@@ -8,3 +8,4 @@ pandas==1.4.3
 plotly==5.7.0
 gunicorn
 dash-tools
+dash_auth==2.0.0
