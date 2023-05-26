@@ -33,8 +33,7 @@ auth = dash_auth.BasicAuth(
 
 def serve_layout():
     data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",sep=';',encoding='latin-1')
-    data.drop(columns=["Unnamed: 0"],inplace=True)
-    
+   
             
     fig_semaforo_general = px.pie(data,names='Semaforo_General',title='Semáforo general 🚦',hole=.3,color='Semaforo_General',color_discrete_map={'Rojo':'red',
                                  'Verde':'green',
