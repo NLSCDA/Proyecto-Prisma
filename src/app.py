@@ -93,8 +93,7 @@ def serve_layout():
     colors={'Verde':'green','Rojo':'red','Amarillo':'yellow','Carga finalizada':'#C39BD3','No es posible calcular':'gray','Calculando..':'blue','Viaje finalizado':'orange'}
     Puntos_I={}
     for j in data.index:
-        print(j)
-        print(data.loc[j,"Semaforo_General"])
+       
         color=colors[data.loc[j,"Semaforo_General"]]
         Puntos_I[data.loc[j,"Folio"]]=data.loc[j,"Coordenadas"].split(',')
         Puntos_I[data.loc[j,"Folio"]].append(color)
