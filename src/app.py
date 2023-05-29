@@ -32,10 +32,11 @@ auth = dash_auth.BasicAuth(
 
 
 def serve_layout():
-    data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",sep=';',encoding='latin-1')
-    data.drop(columns=["Unnamed: 0"],inplace=True)
+    data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",encoding='latin-1')
     
-            
+    data=data.dropna(subset=["Semaforo_General"])
+        
+   
     fig_semaforo_general = px.pie(data,names='Semaforo_General',title='Semáforo general 🚦',hole=.3,color='Semaforo_General',color_discrete_map={'Rojo':'red',
                                  'Verde':'green',
                                  'Amarillo':'yellow',
@@ -91,7 +92,8 @@ def serve_layout():
     
     colors={'Verde':'green','Rojo':'red','Amarillo':'yellow','Carga finalizada':'#C39BD3','No es posible calcular':'gray','Calculando..':'blue','Viaje finalizado':'orange'}
     Puntos_I={}
-    for j in range(len(data)):
+    for j in data.index:
+        print(j)
         print(data.loc[j,"Semaforo_General"])
         color=colors[data.loc[j,"Semaforo_General"]]
         Puntos_I[data.loc[j,"Folio"]]=data.loc[j,"Coordenadas"].split(',')
