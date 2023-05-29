@@ -32,7 +32,7 @@ auth = dash_auth.BasicAuth(
 
 
 def serve_layout():
-    data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",encoding='latin-1')
+    data=pd.read_csv("https://raw.githubusercontent.com/NLSCDA/Proyecto-Prisma/main/Ultima_Consulta.csv?token=GHSAT0AAAAAACDAX55T2V5EJLXHVMBYONYIZDNHTMA",encoding='utf-8')
     
     data=data.dropna(subset=["Semaforo_General"])
         
