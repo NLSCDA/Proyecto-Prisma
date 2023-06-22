@@ -121,7 +121,7 @@ def serve_layout():
           }
         ),
         html.Iframe(srcDoc=open('mapa.html','r').read(),width='100%',height='600'),
-        dash_table.DataTable(data.loc[:,['Folio','Coordenadas','Estatus','Subestatus','Semaforo_General']].to_dict('records'), [{"name": i, "id": i} for i in data.loc[:,['Folio','Coordenadas',"Estatus","Subestatus",'Semaforo_General']].columns],style_as_list_view=False,
+        dash_table.DataTable(data.loc[:,['Folio','Ruta','Cliente','Transportista','Estatus','Subestatus','Semaforo_General','ETA']].to_dict('records'), [{"name": i, "id": i} for i in data.loc[:,['Folio','Ruta','Cliente','Transportista','Estatus','Subestatus','Semaforo_General','ETA']].columns],style_as_list_view=False,
             style_cell={'padding': '2px','textAlign': 'center'},
                                  style_data={'color': 'black',
             'backgroundColor': '#adadad','whiteSpace': 'normal',
